@@ -1,4 +1,6 @@
+Copy **all the code below** and replace the contents of your GitHub `index.html`. This includes your latest changes. Keep `logo.jpg` and `gallery-1.jpg` through `gallery-5.jpg` in the same folder.
 
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -684,7 +686,7 @@ img{max-width:100%;height:auto}
       <div>
         <label for="facebookProfile">Facebook profile link</label>
         <input type="url" id="facebookProfile" name="facebook_profile" placeholder="https://www.facebook.com/your.name" aria-describedby="facebookHelp" required>
-        <p class="form-note" id="facebookHelp" style="margin-top:7px">Open your Facebook profile, copy its link, and paste it here so the chapter can find you.</p>
+        <p class="form-note" id="facebookHelp" style="margin-top:7px">Open your Facebook profile, copy its link, and paste it here. We’ll use it to find you and add you to our group chat for orientation details, announcements, and other updates.</p>
       </div>
 
       <div>
@@ -696,7 +698,7 @@ img{max-width:100%;height:auto}
         <button type="submit" class="button primary" id="applySubmitBtn">Submit application</button>
       </div>
 
-      <p class="form-note">Your application is submitted through Formspree for chapter review and membership follow-up.</p>
+      <p class="form-note">The chapter will use your information to review your application and contact you about membership and orientation.</p>
       <p class="form-status" id="applyStatus" role="status"></p>
     </form>
   </div>
@@ -784,12 +786,7 @@ img{max-width:100%;height:auto}
 
       <details class="faq-item">
         <summary>When is the next orientation?</summary>
-        <p>The date is still being scheduled. Submit your application to receive follow-up details from the chapter.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary>Why do you ask for my Facebook profile?</summary>
-        <p>Your profile link helps chapter members find the right person when following up. Share your profile URL only; we do not ask for your Facebook password.</p>
+        <p>The next orientation is on October 17, 2026, from 6:00 PM onwards. Call time is 5:30 PM (Philippine Time). Submit your application for follow-up details from the chapter.</p>
       </details>
 
       <details class="faq-item">
@@ -827,19 +824,33 @@ img{max-width:100%;height:auto}
 
     <div class="event">
       <div>
-        <span class="status">Stay tuned</span>
-        <h3>Our next orientation is being scheduled</h3>
-        <p>Orientation is your first real look at the chapter — a chance to meet current members, ask questions, and learn what it means to be a Zepsomian. Details will be posted here and shared on our social media as soon as they’re finalized.</p>
+        <span class="status">October 17, 2026</span>
+        <h3>Join us for our next orientation</h3>
+        <p>Orientation is your first real look at the chapter — a chance to meet current members, ask questions, and learn what it means to be a Zepsomian. Join us on October 17, 2026, from 6:00 PM onwards. Call time is 5:30 PM. All times are Philippine Time.</p>
         <a class="button" href="#contact">Get notified — contact us</a>
       </div>
 
       <div class="event-details">
-        <div><strong>Date</strong>To be announced</div>
-        <div><strong>Time</strong>To be announced</div>
-        <div><strong>Venue</strong>Malaybalay City</div>
+        <div>
+          <strong>Date</strong>
+          October 17, 2026
+        </div>
+        <div>
+          <strong>Call time</strong>
+          5:30 PM (Philippine Time)
+        </div>
+        <div>
+          <strong>Starts</strong>
+          6:00 PM onwards (Philippine Time)
+        </div>
+        <div>
+          <strong>Venue</strong>
+          Malaybalay City
+        </div>
       </div>
     </div>
 
+    <p class="caption">Countdown to the 6:00 PM orientation start. Please arrive by 5:30 PM.</p>
     <div class="countdown" id="countdown">
       <div class="unit">
         <span class="num" id="cdDays">00</span>
@@ -1154,9 +1165,7 @@ if (applyForm) {
   });
 }
 
-// Set this when an orientation date has been confirmed.
-// Example: new Date('2026-11-15T09:00:00+08:00')
-const ORIENTATION_DATE = null;
+const ORIENTATION_DATE = new Date('2026-10-17T18:00:00+08:00');
 
 if (ORIENTATION_DATE) {
   const cdEl = document.getElementById('countdown');
@@ -1175,8 +1184,10 @@ if (ORIENTATION_DATE) {
 
     document.getElementById('cdDays').textContent =
       String(d).padStart(2, '0');
+
     document.getElementById('cdHours').textContent =
       String(h).padStart(2, '0');
+
     document.getElementById('cdMins').textContent =
       String(m).padStart(2, '0');
 
